@@ -1,2 +1,2 @@
-class Coach < User
+class Coach < ApplicationRecord
 end

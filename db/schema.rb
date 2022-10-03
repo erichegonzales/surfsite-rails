@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_03_174932) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_03_182112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coaches", force: :cascade do |t|
+    t.string "certifications"
+    t.string "coaching_experience"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_coaches_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "image"
+    t.string "video"
+    t.string "title"
+    t.string "content"
+    t.string "location"
+    t.integer "likes"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,10 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_174932) do
     t.string "picture"
     t.integer "followers"
     t.integer "following"
-    t.string "experience"
+    t.string "experience_level"
     t.boolean "is_coach"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "coaches", "users"
+  add_foreign_key "posts", "users"
 end
