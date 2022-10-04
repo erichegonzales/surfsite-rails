@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
 import Lesson from "./Lesson";
-import LessonListings from "./LessonListings";
 
 const LessonTab = () => {
   const [lessons, setLessons] = useState([]);

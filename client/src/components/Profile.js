@@ -1,6 +1,7 @@
 import { Container, Image, Tabs, Tab, Badge, Button, TabContainer } from 'react-bootstrap'
 import PostTab from './PostTab'
 import LessonTab from './LessonTab'
+import BookedLessonTab from './BookedLessonTab'
 
 const Profile = () => {
 
@@ -21,6 +22,9 @@ const Profile = () => {
         </Tab>
         <Tab eventKey="lessons" title="Lessons">
           <LessonTab />
+        </Tab>
+        <Tab eventKey="booked-lessons" title="Booked Lessons">
+          <BookedLessonTab />
         </Tab>
       </Tabs>
     </Container>

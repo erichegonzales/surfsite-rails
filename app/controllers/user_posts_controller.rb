@@ -1,5 +1,5 @@
 class UserPostsController < ApplicationController
-     # GET /user/1/posts
+     # GET /user/:id/posts
     def index
         @posts = Post.where(user_id: params[:user_id]).order(:id).page params[:page]
 
