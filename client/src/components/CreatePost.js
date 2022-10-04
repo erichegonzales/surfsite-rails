@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
 const CreatePost = ({ show, handleClose }) => {
@@ -7,38 +7,37 @@ const CreatePost = ({ show, handleClose }) => {
   const handleShowSuccess = () => setShowSucess(true);
   const handleCloseSuccess = () => setShowSucess(false);
 
-
   const [formData, setFormData] = useState({
-    image: '',
-    caption: '',
-    location: '',
-    user_id: 1
-   });
+    image: "",
+    caption: "",
+    location: "",
+    user_id: 1,
+  });
 
   const handleChange = (e) => {
-     setFormData({
-       ...formData,
-       [e.target.name]: e.target.value,
-     });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handlePost = async (e) => {
-    e.preventDefault()
-     const newPost = {
-       ...formData
-     };
+    e.preventDefault();
+    const newPost = {
+      ...formData,
+    };
 
     const res = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({post: newPost}),
+      body: JSON.stringify({ post: newPost }),
     });
-    const req = res.json()
-    handleClose()
-    handleShowSuccess()
-  }
+    const req = res.json();
+    handleClose();
+    handleShowSuccess();
+  };
 
   return (
     <>
@@ -57,8 +56,8 @@ const CreatePost = ({ show, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
+              <Form.Group className="mb-3">
                 <Form.Label>Image</Form.Label>
                 <Form.Control
                   type="text"
@@ -67,21 +66,23 @@ const CreatePost = ({ show, handleClose }) => {
                 />
               </Form.Group>
 
-              <Form.Label>Caption</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Caption"
-                onChange={(e) => handleChange(e)}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Caption</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Caption"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Location</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Location"
-                onChange={(e) => handleChange(e)}
-              />
+              <Form.Group className="mb-3">
+                <Form.Label>Location</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Location"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Form.Group>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -104,9 +105,7 @@ const CreatePost = ({ show, handleClose }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Success!
-          </Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
         </Modal.Header>
       </Modal>
     </>
