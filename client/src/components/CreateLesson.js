@@ -38,7 +38,6 @@ const CreateLesson = ({ show, handleClose }) => {
     const req = res.json();
     handleClose();
     handleShowSuccess();
-    this.render();
   };
 
   return (
