@@ -14,9 +14,7 @@ const LessonTab = () => {
 
   useEffect(() => {
     const getLessons = async () => {
-      const res = await fetch(
-        `http://localhost:3001/coaches/1/lessons?page=1`
-      );
+      const res = await fetch(`http://localhost:3001/coaches/1/lessons?page=1`);
       const data = await res.json();
       setLessons(data);
     };
