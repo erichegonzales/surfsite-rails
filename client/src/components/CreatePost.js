@@ -1,8 +1,14 @@
-import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from 'react'
+import { Modal, Button, Form } from "react-bootstrap";
 
-const CreatePost = ({ show, handleClose, handleShow }) => {
-   const [formData, setFormData] = useState({
+const CreatePost = ({ show, handleClose }) => {
+  const [showSuccess, setShowSucess] = useState(false);
+
+  const handleShowSuccess = () => setShowSucess(true);
+  const handleCloseSuccess = () => setShowSucess(false);
+
+
+  const [formData, setFormData] = useState({
     image: '',
     caption: '',
     location: '',
@@ -31,6 +37,7 @@ const CreatePost = ({ show, handleClose, handleShow }) => {
     });
     const req = res.json()
     handleClose()
+    handleShowSuccess()
   }
 
   return (
@@ -76,14 +83,6 @@ const CreatePost = ({ show, handleClose, handleShow }) => {
                 onChange={(e) => handleChange(e)}
               />
             </Form.Group>
-
-            {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group> */}
           </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -94,6 +93,21 @@ const CreatePost = ({ show, handleClose, handleShow }) => {
             Post
           </Button>
         </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={showSuccess}
+        onHide={handleCloseSuccess}
+        backdrop="static"
+        keyboard={false}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Success!
+          </Modal.Title>
+        </Modal.Header>
       </Modal>
     </>
   );

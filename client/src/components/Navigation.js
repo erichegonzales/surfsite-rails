@@ -32,9 +32,9 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/posts">Content</Nav.Link>
+              <Nav.Link href="/posts">Feed</Nav.Link>
               <Nav.Link href="/lessons">Lessons</Nav.Link>
-              <Nav.Link href="/news">News</Nav.Link>
+              {/* <Nav.Link href="/news">News</Nav.Link> */}
               <Nav.Link href="/profile">Profile</Nav.Link>
 
               <NavDropdown
