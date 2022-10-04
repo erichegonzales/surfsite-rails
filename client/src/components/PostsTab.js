@@ -1,4 +1,4 @@
-import { Container, CardGroup} from "react-bootstrap";
+import { Container, CardGroup } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
@@ -7,12 +7,15 @@ import Post from "./Post";
 
 const PostsTab = () => {
   const [posts, setPosts] = useState([]);
+  const [userId, setUserId] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(2);
 
   useEffect(() => {
     const getPosts = async () => {
-      const res = await fetch(`http://localhost:3004/posts?_page=1&_limit=20`);
+      const res = await fetch(
+        `http://localhost:3001/users/${userId}/posts?page=1`
+      );
       const data = await res.json();
       setPosts(data);
     };
@@ -24,7 +27,7 @@ const PostsTab = () => {
 
   const fetchPosts = async () => {
     const res = await fetch(
-      `http://localhost:3004/posts?_page=${page}&_limit=20`
+      `http://localhost:3001/users/${userId}/posts?page=${page}`
     );
     const data = await res.json();
     return data;

@@ -12,7 +12,7 @@ const PostsFeed = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/all-posts/`);
+      const res = await fetch(`http://localhost:3001/posts?page=1`);
       const data = await res.json();
       setPosts(data);
     };
@@ -21,9 +21,7 @@ const PostsFeed = () => {
   }, []);
 
   const fetchPosts = async () => {
-    const res = await fetch(
-      `http://127.0.0.1:8000/posts?_page=${page}&_limit=5`
-    );
+    const res = await fetch(`http://localhost:3001/posts?page=${page}`);
     const data = await res.json();
     return data;
   };
@@ -36,6 +34,8 @@ const PostsFeed = () => {
     }
     setPage(page + 1);
   };
+
+  console.log(posts)
 
   return (
     <Container>

@@ -1,5 +1,5 @@
 class BookedLessonSerializer < ActiveModel::Serializer
   attributes :id, :date, :time
-  has_one :lesson
-  has_one :user
+  belongs_to :lesson
+  belongs_to :user
 end

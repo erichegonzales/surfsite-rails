@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-    has_many :posts
-    has_many :comments
-    has_many :lessons
-    has_many :booked_lessons
-    has_many :reviews
+    has_many :posts, dependent: :destroy
+    has_many :comments, dependent: :destroy
+    has_many :reviews, dependent: :destroy
 end
