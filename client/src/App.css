@@ -50,3 +50,7 @@
 .lesson-search {
   display: inline-flex;
 }
+
+.info-modal {
+  transform: scale(1.4);
+}

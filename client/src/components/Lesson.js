@@ -1,30 +1,37 @@
-import { Card, CardGroup, Modal, Button } from "react-bootstrap";
+import { Card, CardGroup, Modal, Button, ModalBody } from "react-bootstrap";
 import { useState } from "react";
 
 const Lesson = ({ lesson }) => {
-   const [showSuccess, setShowSucess] = useState(false);
+  const [showSuccess, setShowSucess] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
-   const handleShowSuccess = () => setShowSucess(true);
-   const handleCloseSuccess = () => setShowSucess(false);
-  
+  const handleShowSuccess = () => setShowSucess(true);
+  const handleCloseSuccess = () => setShowSucess(false);
+  const handleShowInfo = () => setShowInfo(true);
+  const handleCloseInfo = () => setShowInfo(false);
+
+  const handleInfo = () => {
+    handleShowInfo();
+  }
+
   const handleBooking = async () => {
     const res = await fetch(`http://localhost:3001/booked_lessons`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         booked_lesson: {
-          date: '',
-          time: '',
+          date: "",
+          time: "",
           user_id: 1,
           lesson_id: lesson.id,
-        }
-      })
+        },
+      }),
     });
-    const req = await res.json()
+    const req = await res.json();
     handleShowSuccess();
-  }
+  };
 
   return (
     <>
@@ -32,12 +39,39 @@ const Lesson = ({ lesson }) => {
         <Card style={{ width: "25rem" }}>
           <Card.Body>
             <Card.Title>id: {lesson.id} </Card.Title>
-            <Card.Img src={lesson.image}></Card.Img>
+            <Card.Img src={lesson.image} onClick={handleInfo}></Card.Img>
             <Card.Text>comment: {lesson.content}</Card.Text>
             <Button onClick={handleBooking}>Book Lesson</Button>
           </Card.Body>
         </Card>
       </CardGroup>
+
+      <Modal
+        show={showInfo}
+        onHide={handleCloseInfo}
+        backdrop="static"
+        keyboard={false}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        className="info-modal"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            id: {lesson.id}
+          </Modal.Title>
+        </Modal.Header>
+        <ModalBody>
+        <CardGroup>
+          <Card style={{ width: "25rem" }}>
+            <Card.Body>
+              <Card.Img src={lesson.image} onClick={handleInfo}></Card.Img>
+              <Card.Text>comment: {lesson.content}</Card.Text>
+              <Button onClick={handleBooking}>Book Lesson</Button>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+        </ModalBody>
+      </Modal>
 
       <Modal
         show={showSuccess}
@@ -50,9 +84,9 @@ const Lesson = ({ lesson }) => {
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
         </Modal.Header>
-          <Modal.Body>
-            <p>Check your profile to see your booked lessons.</p>
-          </Modal.Body>
+        <Modal.Body>
+          <p>Check your profile to see your booked lessons.</p>
+        </Modal.Body>
       </Modal>
     </>
   );
