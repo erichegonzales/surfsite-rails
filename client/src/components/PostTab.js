@@ -34,7 +34,7 @@ const PostTab = () => {
   const fetchData = async () => {
     const postsFromServer = await fetchPosts();
     setPosts([...posts, ...postsFromServer]);
-    if (postsFromServer.length === 0 || postsFromServer.length < 20) {
+    if (postsFromServer.length === 0 || postsFromServer.length < 1) {
       setHasMore(false);
     }
     setPage(page + 1);

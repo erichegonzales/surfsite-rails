@@ -30,7 +30,7 @@ const LessonListings = () => {
   const fetchData = async () => {
     const lessonsFromServer = await fetchLessons();
     setLessons([...lessons, ...lessonsFromServer]);
-    if (lessonsFromServer.length === 0 || lessonsFromServer.length < 5) {
+    if (lessonsFromServer.length === 0 || lessonsFromServer.length < 1) {
       setHasMore(false);
     }
     setPage(page + 1);
