@@ -3,7 +3,11 @@ class BookedLessonsController < ApplicationController
 
   # GET /booked_lessons
   def index
-    @booked_lessons = BookedLesson.all
+    if params[:user_id]
+      @booked_lessons = User.find_by_id(params[:user_id]).booked_lessons.order(:id).page params[:page]
+    else
+      @booked_lessons = BookedLesson.all.order(:id).page params[:page]
+    end
 
     render json: @booked_lessons
   end

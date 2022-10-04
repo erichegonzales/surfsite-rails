@@ -3,8 +3,12 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all.order(:id).page params[:page]
-
+    if params[:user_id]
+      @posts = User.find_by_id(params[:user_id]).posts.order(:id).page params[:page]
+    else
+      @posts = Post.all.order(:id).page params[:page]
+    end
+    
     render json: @posts
   end
 
