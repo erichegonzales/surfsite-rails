@@ -13,7 +13,7 @@ const LessonListings = () => {
 
   useEffect(() => {
     const getLessons = async () => {
-      const res = await fetch(`http://localhost:3004/lessons?_page=1&_limit=5`);
+      const res = await fetch(`http://localhost:3001/lessons?page=1`);
       const data = await res.json();
       setLessons(data);
     };
@@ -22,9 +22,7 @@ const LessonListings = () => {
   }, []);
 
   const fetchLessons = async () => {
-    const res = await fetch(
-      `http://localhost:3004/lessons?_page=${page}&_limit=5`
-    );
+    const res = await fetch(`http://localhost:3001/lessons?page=${page}`);
     const data = await res.json();
     return data;
   };

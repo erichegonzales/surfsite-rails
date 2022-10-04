@@ -2,7 +2,7 @@ import './App.css';
 import { Container } from "react-bootstrap"
 import Navigation from "./components/Navigation";
 import Landing from "./components/Landing";
-import PostFeed from "./components/PostsFeed";
+import PostFeed from "./components/PostFeed";
 import NewsFeed from "./components/NewsFeed";
 import Profile from "./components/Profile";
 import LessonListings from "./components/LessonListings";

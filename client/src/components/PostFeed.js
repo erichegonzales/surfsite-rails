@@ -5,7 +5,7 @@ import Post from "./Post";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
 
-const PostsFeed = () => {
+const PostFeed = () => {
   const [posts, setPosts] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(2);
@@ -35,21 +35,18 @@ const PostsFeed = () => {
     setPage(page + 1);
   };
 
-  console.log(posts)
-
   return (
     <Container>
       <Row>
         <Col></Col>
-        <Col xs={8}>
+        <Col xs={8} style={{ width: "45rem" }}>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Create a post" />
-            <Button variant="primary" type="button">
-              Submit
-            </Button>
+              <Button variant="primary" type="button">
+                Submit
+              </Button>
             </Form.Group>
-
           </Form>
           <InfiniteScroll
             dataLength={posts.length} //This is important field to render the next data
@@ -69,4 +66,4 @@ const PostsFeed = () => {
   );
 };
 
-export default PostsFeed;
+export default PostFeed;

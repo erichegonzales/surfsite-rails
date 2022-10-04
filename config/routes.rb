@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :booked_lessons
   resources :lessons
   resources :comments
-  resources :coaches
+  resources :coaches do
+    resources :lessons, controller: 'coach_lessons'
+  end
   resources :users do
     resources :posts, controller: 'user_posts'
   end

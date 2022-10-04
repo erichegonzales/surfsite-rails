@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.all.order(:id).page params[:page]
 
     render json: @lessons
   end

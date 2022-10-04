@@ -3,40 +3,39 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
-import Post from "./Post";
+import Lesson from "./Lesson";
+import LessonListings from "./LessonListings";
 
-const PostsTab = () => {
-  const [posts, setPosts] = useState([]);
-  const [userId, setUserId] = useState(1);
+const LessonTab = () => {
+  const [lessons, setLessons] = useState([]);
+  const [coachId, setCoachId] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(2);
 
   useEffect(() => {
-    const getPosts = async () => {
+    const getLessons = async () => {
       const res = await fetch(
-        `http://localhost:3001/users/${userId}/posts?page=1`
+        `http://localhost:3001/coaches/1/lessons?page=1`
       );
       const data = await res.json();
-      setPosts(data);
+      setLessons(data);
     };
 
-    getPosts();
+    getLessons();
   }, []);
 
-  console.log(posts);
-
-  const fetchPosts = async () => {
+  const fetchLessons = async () => {
     const res = await fetch(
-      `http://localhost:3001/users/${userId}/posts?page=${page}`
+      `http://localhost:3001/coaches/${coachId}/lessons?page=${page}`
     );
     const data = await res.json();
     return data;
   };
 
   const fetchData = async () => {
-    const postsFromServer = await fetchPosts();
-    setPosts([...posts, ...postsFromServer]);
-    if (postsFromServer.length === 0 || postsFromServer.length < 20) {
+    const lessonsFromServer = await fetchLessons();
+    setLessons([...lessons, ...lessonsFromServer]);
+    if (lessonsFromServer.length === 0 || lessonsFromServer.length < 20) {
       setHasMore(false);
     }
     setPage(page + 1);
@@ -45,15 +44,15 @@ const PostsTab = () => {
   return (
     <Container>
       <InfiniteScroll
-        dataLength={posts.length} //This is important field to render the next data
+        dataLength={lessons.length} //This is important field to render the next data
         next={fetchData}
         hasMore={hasMore}
         loader={<Loader />}
         endMessage={<EndMessage />}
       >
         <CardGroup>
-          {posts.map((post) => {
-            return <Post key={post.id} post={post} />;
+          {lessons.map((lesson) => {
+            return <Lesson key={lesson.id} lesson={lesson} />;
           })}
         </CardGroup>
       </InfiniteScroll>
@@ -61,4 +60,4 @@ const PostsTab = () => {
   );
 };
 
-export default PostsTab;
+export default LessonTab;

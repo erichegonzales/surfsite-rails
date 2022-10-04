@@ -2,9 +2,8 @@ import { Modal, Button, Form } from "react-bootstrap";
 
 const CreatePost = ({ show, handleClose, handleShow }) => {
 
-  const handleCreate = (e) => {
-    // e.preventDefault()
-    console.log("worked")
+  const handlePost = (e) => {
+    
   }
 
   return (
@@ -39,16 +38,13 @@ const CreatePost = ({ show, handleClose, handleShow }) => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="primary" type="button" onClick={handleCreate}>
-              Submit
-            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Post</Button>
+          <Button variant="primary" onClick={handlePost}>Post</Button>
         </Modal.Footer>
       </Modal>
     </>

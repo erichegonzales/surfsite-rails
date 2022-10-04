@@ -7,7 +7,7 @@ const Post = ({ post }) => {
 
   return (
     <CardGroup>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "25rem" }}>
         <Card.Body>
           <Card.Title>id: {post.id} </Card.Title>
           <Card.Img src={post.image}></Card.Img>
