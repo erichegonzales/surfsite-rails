@@ -6,7 +6,6 @@ const Lesson = ({ lesson }) => {
 
    const handleShowSuccess = () => setShowSucess(true);
    const handleCloseSuccess = () => setShowSucess(false);
-
   
   const handleBooking = async () => {
     const res = await fetch(`http://localhost:3001/booked_lessons`, {
@@ -52,7 +51,7 @@ const Lesson = ({ lesson }) => {
           <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
         </Modal.Header>
           <Modal.Body>
-            <p>Check your profile to see your booked lessons</p>
+            <p>Check your profile to see your booked lessons.</p>
           </Modal.Body>
       </Modal>
     </>

@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
   resources :users do
     resources :posts, only: [:index]
-    resources :booked_lessons, only: [:index, :show, :delete]
+    resources :booked_lessons, only: [:index, :show, :destroy]
   end
 end

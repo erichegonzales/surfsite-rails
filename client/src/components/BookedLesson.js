@@ -8,11 +8,11 @@ const BookedLesson = ({ booked_lesson }) => {
   const handleCloseSuccess = () => setShowSucess(false);
 
   const handleBooking = async () => {
+      handleShowSuccess();
     const res = await fetch(`http://localhost:3001/users/1/booked_lessons/${booked_lesson.id}`, {
       method: "DELETE",
     });
     const req = await res.json();
-    handleShowSuccess();
   };
 
   return (
@@ -40,7 +40,7 @@ const BookedLesson = ({ booked_lesson }) => {
           <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Your lesson was removed</p>
+          <p>Your lesson was cancelled.</p>
         </Modal.Body>
       </Modal>
     </>
