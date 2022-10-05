@@ -1,4 +1,5 @@
-import { Card, CardGroup, Modal, Button, ModalBody } from "react-bootstrap";
+import { Card, CardGroup, Modal, Button } from "react-bootstrap";
+import { ModalBody, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 
 const Lesson = ({ lesson }) => {
@@ -12,7 +13,7 @@ const Lesson = ({ lesson }) => {
 
   const handleInfo = () => {
     handleShowInfo();
-  }
+  };
 
   const handleBooking = async () => {
     const res = await fetch(`http://localhost:3001/booked_lessons`, {
@@ -47,6 +48,7 @@ const Lesson = ({ lesson }) => {
       </CardGroup>
 
       <Modal
+        size="lg"
         show={showInfo}
         onHide={handleCloseInfo}
         backdrop="static"
@@ -61,15 +63,33 @@ const Lesson = ({ lesson }) => {
           </Modal.Title>
         </Modal.Header>
         <ModalBody>
-        <CardGroup>
-          <Card style={{ width: "25rem" }}>
-            <Card.Body>
-              <Card.Img src={lesson.image} onClick={handleInfo}></Card.Img>
-              <Card.Text>comment: {lesson.content}</Card.Text>
-              <Button onClick={handleBooking}>Book Lesson</Button>
-            </Card.Body>
-          </Card>
-        </CardGroup>
+          <Container>
+            <Row>
+              <Col >
+                <CardGroup>
+                  <Card style={{ width: "25rem" }}>
+                    <Card.Body>
+                      <Card.Img
+                        src={lesson.image}
+                        onClick={handleInfo}
+                      ></Card.Img>
+                    </Card.Body>
+                  </Card>
+                </CardGroup>
+              </Col>
+
+              <Col >
+                <CardGroup>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Body>
+                      <Card.Text>description: {lesson.content}</Card.Text>
+                      <Button onClick={handleBooking}>Book Lesson</Button>
+                    </Card.Body>
+                  </Card>
+                </CardGroup>
+              </Col>
+            </Row>
+          </Container>
         </ModalBody>
       </Modal>
 
