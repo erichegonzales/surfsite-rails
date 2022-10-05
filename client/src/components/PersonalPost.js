@@ -1,23 +1,28 @@
 import { Card, CardGroup, Modal, Button } from "react-bootstrap";
-import { ModalBody, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import Video from "./Video";
+import EditPost from "./EditPost";
+// import Video from "./Video";
 
 const PersonalPost = ({ post }) => {
  const [showSuccess, setShowSucess] = useState(false);
  const [showInfo, setShowInfo] = useState(false);
+ const [showEdit, setShowEdit] = useState(false);
 
  const handleShowSuccess = () => setShowSucess(true);
  const handleCloseSuccess = () => setShowSucess(false);
  const handleShowInfo = () => setShowInfo(true);
  const handleCloseInfo = () => setShowInfo(false);
+ const handleShowEdit = () => setShowEdit(true);
+ const handleCloseEdit = () => setShowEdit(false);
 
   const handleInfo = () => {
     handleShowInfo();
   };
 
   const handleEdit = () => {
-    // handleCloseInfo();
+    handleCloseInfo();
+    handleShowEdit();
   }
 
   const handleDelete = async () => {
@@ -63,7 +68,7 @@ const PersonalPost = ({ post }) => {
             id: {post.id}
           </Modal.Title>
         </Modal.Header>
-        <ModalBody>
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
@@ -92,7 +97,7 @@ const PersonalPost = ({ post }) => {
               </Col>
             </Row>
           </Container>
-        </ModalBody>
+        </Modal.Body>
       </Modal>
 
       <Modal
@@ -108,10 +113,9 @@ const PersonalPost = ({ post }) => {
             Post deleted!
           </Modal.Title>
         </Modal.Header>
-        {/* <Modal.Body>
-          <p>Check your profile to see your booked lessons.</p>
-        </Modal.Body> */}
       </Modal>
+
+      <EditPost showEdit={showEdit} handleShowEdit={handleShowEdit} handleCloseEdit={handleCloseEdit} />
     </>
   );
 };

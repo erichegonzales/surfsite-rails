@@ -1,5 +1,5 @@
 import { Card, CardGroup, Modal, Button } from "react-bootstrap";
-import { ModalBody, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 
 const BookedLesson = ({ booked_lesson }) => {
@@ -54,7 +54,7 @@ const BookedLesson = ({ booked_lesson }) => {
             id: {booked_lesson.id}
           </Modal.Title>
         </Modal.Header>
-        <ModalBody>
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
@@ -84,7 +84,7 @@ const BookedLesson = ({ booked_lesson }) => {
               </Col>
             </Row>
           </Container>
-        </ModalBody>
+        </Modal.Body>
       </Modal>
 
       <Modal
