@@ -107,7 +107,7 @@ const Lesson = ({ lesson }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">Lesson booked!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>Check your profile to see your booked lessons.</p>

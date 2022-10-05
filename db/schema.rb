@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_182825) do
 
   create_table "lessons", force: :cascade do |t|
     t.string "title"
-    t.string "subtitle"
     t.string "description"
     t.string "image"
     t.string "location"
@@ -61,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_182825) do
     t.string "image"
     t.string "video"
     t.string "title"
-    t.string "content"
+    t.string "caption"
     t.string "location"
     t.integer "likes"
     t.bigint "user_id", null: false

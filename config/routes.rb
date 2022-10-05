@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :lessons, only: [:index, :show, :destroy]
   end
   resources :users do
-    resources :posts, only: [:index, :show, :destroy]
+    resources :posts, only: [:index, :show, :update, :destroy]
     resources :booked_lessons, only: [:index, :show, :destroy]
   end
 end

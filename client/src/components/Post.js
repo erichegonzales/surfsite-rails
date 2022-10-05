@@ -23,11 +23,11 @@ const Post = ({ post }) => {
             {/* {post.video === null || post.video === "null" ? null : (
               <Video src={post.video} />
             )} */}
-            <Card.Text>comment: {post.content}</Card.Text>
+            <Card.Text>title: {post.title}</Card.Text>
             <Card.Text>user: {post.user.username}</Card.Text>
             <Card.Text>location: {post.location}</Card.Text>
             <Card.Text>likes: {post.likes}</Card.Text>
-            <Card.Text>description: {post.content}</Card.Text>
+            <Card.Text>description: {post.caption}</Card.Text>
           </Card.Body>
         </Card>
       </CardGroup>

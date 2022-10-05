@@ -19,22 +19,22 @@ coach1 =  Coach.create(id: 1, certifications: 'USA National Certification', coac
 coach2 =  Coach.create(id: 2, certifications: 'USA National Certification', coaching_experience: 'Coached for 4 years', user: user2)
 
 10.times do |post|
-  Post.create(image: placeholder, video: 'null', content: 'lorem ipsum', location: 'NY', likes: 0, user: user1)
+  Post.create(image: placeholder, video: 'null', caption: 'lorem ipsum', location: 'NY', likes: 0, user: user1)
 end
 
 10.times do |post|
-  Post.create(image: placeholder, video: 'null', content: 'lorem ipsum', location: 'NY', likes: 0, user: user2)
+  Post.create(image: placeholder, video: 'null', caption: 'lorem ipsum', location: 'NY', likes: 0, user: user2)
 end
 
 10.times do |lesson|
-  Lesson.create(title: 'Popup lesson', subtitle: '', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach1)
+  Lesson.create(title: 'Popup lesson', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach1)
 end
 
-10.times do |lesson|
-  Lesson.create(title: 'Popup lesson', subtitle: '', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach2)
-end
+# 10.times do |lesson|
+#   Lesson.create(title: 'Popup lesson', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach2)
+# end
 
-lesson1 = Lesson.create(id: 1, title: 'Popup lesson', subtitle: '', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach2)
+lesson1 = Lesson.create(id: 0, title: 'Popup lesson', description: 'Learn how to popup fast', image: placeholder, location: 'NYC', avg_rating: 4, coach: coach2)
 
 5.times do |lesson|
   BookedLesson.create(date: '', time: '', lesson: lesson1, user: user1)

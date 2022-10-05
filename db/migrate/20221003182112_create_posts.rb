@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :image
       t.string :video
       t.string :title
-      t.string :content
+      t.string :caption
       t.string :location
       t.integer :likes
       t.references :user, null: false, foreign_key: true

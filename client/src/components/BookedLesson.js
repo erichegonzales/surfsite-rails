@@ -96,26 +96,12 @@ const BookedLesson = ({ booked_lesson }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Lesson cancelled!
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Check your profile to see your booked lessons.</p>
-        </Modal.Body>
-      </Modal>
-
-      <Modal
-        show={showSuccess}
-        onHide={handleCloseSuccess}
-        backdrop="static"
-        keyboard={false}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Your lesson was cancelled.</p>
+          <p>Check the lessons page to book more lessons.</p>
         </Modal.Body>
       </Modal>
     </>

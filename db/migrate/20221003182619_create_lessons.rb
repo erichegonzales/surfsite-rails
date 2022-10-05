@@ -2,7 +2,6 @@ class CreateLessons < ActiveRecord::Migration[7.0]
   def change
     create_table :lessons do |t|
       t.string :title
-      t.string :subtitle
       t.string :description
       t.string :image
       t.string :location
