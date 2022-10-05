@@ -45,7 +45,7 @@ const Lesson = ({ lesson }) => {
             <Card.Text>comment: {lesson.content}</Card.Text>
           </Card.Body>
           <Card.Body>
-            <Button onClick={handleBooking}>
+            <Button size="lg" onClick={handleBooking}>
               Book Lesson
             </Button>
           </Card.Body>
@@ -85,10 +85,12 @@ const Lesson = ({ lesson }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "12rem" }}>
+                  <Card style={{ width: "15rem" }}>
                     <Card.Body>
                       <Card.Text>description: {lesson.content}</Card.Text>
-                      <Button onClick={handleBooking}>Book Lesson</Button>
+                      <Button size="lg" onClick={handleBooking}>
+                        Book Lesson
+                      </Button>
                     </Card.Body>
                   </Card>
                 </CardGroup>
@@ -107,7 +109,9 @@ const Lesson = ({ lesson }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Lesson booked!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Lesson booked!
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>Check your profile to see your booked lessons.</p>

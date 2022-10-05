@@ -34,7 +34,9 @@ const BookedLesson = ({ booked_lesson }) => {
             <Card.Text>comment: {booked_lesson.date}</Card.Text>
           </Card.Body>
           <Card.Body>
-            <Button onClick={handleBooking}>Cancel Lesson</Button>
+            <Button size="lg" onClick={handleBooking}>
+              Cancel Lesson
+            </Button>
           </Card.Body>
         </Card>
       </CardGroup>
@@ -72,12 +74,14 @@ const BookedLesson = ({ booked_lesson }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "12rem" }}>
+                  <Card style={{ width: "15rem" }}>
                     <Card.Body>
                       <Card.Text>
                         description: {booked_lesson.content}
                       </Card.Text>
-                      <Button onClick={handleBooking}>Cancel Lesson</Button>
+                      <Button size="lg" onClick={handleBooking}>
+                        Cancel Lesson
+                      </Button>
                     </Card.Body>
                   </Card>
                 </CardGroup>

@@ -65,7 +65,7 @@ const Post = ({ post }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "12rem" }}>
+                  <Card style={{ width: "15rem" }}>
                     <Card.Body>
                       <Card.Text>description: </Card.Text>
                     </Card.Body>

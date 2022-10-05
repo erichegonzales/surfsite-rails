@@ -68,7 +68,7 @@ const PersonalPost = ({ post }) => {
             id: {post.id}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body >
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
@@ -86,11 +86,15 @@ const PersonalPost = ({ post }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "12rem" }}>
+                  <Card style={{ width: "15rem" }}>
                     <Card.Body>
                       <Card.Text>description: </Card.Text>
-                      <Button onClick={handleEdit}>Edit post</Button>
-                      <Button onClick={handleDelete}>Delete post</Button>
+                      <Button size="lg" onClick={handleEdit}>
+                        Edit post
+                      </Button>
+                      <Button size="lg" onClick={handleDelete}>
+                        Delete post
+                      </Button>
                     </Card.Body>
                   </Card>
                 </CardGroup>
