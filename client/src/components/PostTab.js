@@ -5,6 +5,8 @@ import Loader from "./Loader";
 import EndMessage from "./EndMessage";
 import PersonalPost from "./PersonalPost";
 
+import { useSelector, useDispatch } from "react-redux";
+
 const PostTab = () => {
   const [posts, setPosts] = useState([]);
   const [userId, setUserId] = useState(1);

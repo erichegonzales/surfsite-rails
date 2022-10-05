@@ -36,6 +36,7 @@ const CreatePost = ({ show, handleClose }) => {
       body: JSON.stringify({ post: newPost }),
     });
     const req = res.json();
+    // window.location.reload();
   };
 
   return (
