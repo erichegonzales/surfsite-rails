@@ -54,7 +54,7 @@ const PersonalPost = ({ post }) => {
       </CardGroup>
 
       <Modal
-        size="lg"
+        size="xl"
         show={showInfo}
         onHide={handleCloseInfo}
         backdrop="static"
@@ -68,12 +68,12 @@ const PersonalPost = ({ post }) => {
             id: {post.id}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body >
           <Container>
             <Row>
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "25rem" }}>
+                  <Card style={{ width: "45rem" }}>
                     <Card.Body>
                       <Card.Img
                         src={post.image}
@@ -86,7 +86,7 @@ const PersonalPost = ({ post }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "18rem" }}>
+                  <Card style={{ width: "12rem" }}>
                     <Card.Body>
                       <Card.Text>description: </Card.Text>
                       <Button onClick={handleEdit}>Edit post</Button>
@@ -109,7 +109,9 @@ const PersonalPost = ({ post }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Post deleted!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Post deleted!
+          </Modal.Title>
         </Modal.Header>
       </Modal>
 

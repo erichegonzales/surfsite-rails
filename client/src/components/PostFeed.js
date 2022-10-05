@@ -39,7 +39,7 @@ const PostFeed = () => {
     <Container>
       <Row>
         <Col></Col>
-        <Col xs={8} style={{ width: "45rem" }}>
+        <Col xs={8} style={{ width: "50rem" }}>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Create a post" />

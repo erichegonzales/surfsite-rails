@@ -53,7 +53,7 @@ const Lesson = ({ lesson }) => {
       </CardGroup>
 
       <Modal
-        size="lg"
+        size="xl"
         show={showInfo}
         onHide={handleCloseInfo}
         backdrop="static"
@@ -72,7 +72,7 @@ const Lesson = ({ lesson }) => {
             <Row>
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "25rem" }}>
+                  <Card style={{ width: "45rem" }}>
                     <Card.Body>
                       <Card.Img
                         src={lesson.image}
@@ -85,7 +85,7 @@ const Lesson = ({ lesson }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "18rem" }}>
+                  <Card style={{ width: "12rem" }}>
                     <Card.Body>
                       <Card.Text>description: {lesson.content}</Card.Text>
                       <Button onClick={handleBooking}>Book Lesson</Button>

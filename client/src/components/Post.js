@@ -33,7 +33,7 @@ const Post = ({ post }) => {
       </CardGroup>
 
       <Modal
-        size="lg"
+        size="xl"
         show={showInfo}
         onHide={handleCloseInfo}
         backdrop="static"
@@ -52,7 +52,7 @@ const Post = ({ post }) => {
             <Row>
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "25rem" }}>
+                  <Card style={{ width: "45rem" }}>
                     <Card.Body>
                       <Card.Img
                         src={post.image}
@@ -65,7 +65,7 @@ const Post = ({ post }) => {
 
               <Col>
                 <CardGroup>
-                  <Card style={{ width: "18rem" }}>
+                  <Card style={{ width: "12rem" }}>
                     <Card.Body>
                       <Card.Text>description: </Card.Text>
                     </Card.Body>
