@@ -65,7 +65,7 @@ const Lesson = ({ lesson }) => {
         <ModalBody>
           <Container>
             <Row>
-              <Col >
+              <Col>
                 <CardGroup>
                   <Card style={{ width: "25rem" }}>
                     <Card.Body>
@@ -78,7 +78,7 @@ const Lesson = ({ lesson }) => {
                 </CardGroup>
               </Col>
 
-              <Col >
+              <Col>
                 <CardGroup>
                   <Card style={{ width: "18rem" }}>
                     <Card.Body>
