@@ -16,8 +16,8 @@ const BookedLesson = ({ booked_lesson }) => {
    };
 
   const handleBooking = async () => {
-    handleCloseInfo();
     handleShowSuccess();
+    handleCloseInfo();
     const res = await fetch(`http://localhost:3001/users/1/booked_lessons/${booked_lesson.id}`, {
       method: "DELETE",
     });
@@ -28,13 +28,12 @@ const BookedLesson = ({ booked_lesson }) => {
     <>
       <CardGroup>
         <Card style={{ width: "25rem" }}>
-          <Card.Body>
+          <Card.Body onClick={handleInfo}>
             <Card.Title>id: {booked_lesson.id} </Card.Title>
-            <Card.Img
-              src={booked_lesson.lesson.image}
-              onClick={handleInfo}
-            ></Card.Img>
+            <Card.Img src={booked_lesson.lesson.image}></Card.Img>
             <Card.Text>comment: {booked_lesson.date}</Card.Text>
+          </Card.Body>
+          <Card.Body>
             <Button onClick={handleBooking}>Cancel Lesson</Button>
           </Card.Body>
         </Card>

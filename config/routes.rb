@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   resources :lessons
   resources :comments
   resources :coaches do
-    resources :lessons, only: [:index]
+    resources :lessons, only: [:index, :show, :destroy]
   end
   resources :users do
-    resources :posts, only: [:index]
+    resources :posts, only: [:index, :show, :destroy]
     resources :booked_lessons, only: [:index, :show, :destroy]
   end
 end

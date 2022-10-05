@@ -3,15 +3,31 @@ import { ModalBody, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import Video from "./Video";
 
-const Post = ({ post }) => {
-  const [showInfo, setShowInfo] = useState(false);
+const PersonalPost = ({ post }) => {
+ const [showSuccess, setShowSucess] = useState(false);
+ const [showInfo, setShowInfo] = useState(false);
 
-  const handleShowInfo = () => setShowInfo(true);
-  const handleCloseInfo = () => setShowInfo(false);
+ const handleShowSuccess = () => setShowSucess(true);
+ const handleCloseSuccess = () => setShowSucess(false);
+ const handleShowInfo = () => setShowInfo(true);
+ const handleCloseInfo = () => setShowInfo(false);
 
   const handleInfo = () => {
     handleShowInfo();
   };
+
+  const handleEdit = () => {
+    // handleCloseInfo();
+  }
+
+  const handleDelete = async () => {
+     handleShowSuccess();
+     handleCloseInfo();
+    const res = await fetch(`http://localhost:3001/users/1/posts/${post.id}`, {
+      method: "DELETE",
+    });
+    const req = await res.json();
+  }
 
   return (
     <>
@@ -68,6 +84,8 @@ const Post = ({ post }) => {
                   <Card style={{ width: "18rem" }}>
                     <Card.Body>
                       <Card.Text>description: </Card.Text>
+                      <Button onClick={handleEdit}>Edit post</Button>
+                      <Button onClick={handleDelete}>Delete post</Button>
                     </Card.Body>
                   </Card>
                 </CardGroup>
@@ -76,8 +94,26 @@ const Post = ({ post }) => {
           </Container>
         </ModalBody>
       </Modal>
+
+      <Modal
+        show={showSuccess}
+        onHide={handleCloseSuccess}
+        backdrop="static"
+        keyboard={false}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Post deleted!
+          </Modal.Title>
+        </Modal.Header>
+        {/* <Modal.Body>
+          <p>Check your profile to see your booked lessons.</p>
+        </Modal.Body> */}
+      </Modal>
     </>
   );
 };
 
-export default Post;
+export default PersonalPost;

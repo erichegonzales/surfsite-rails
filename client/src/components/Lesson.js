@@ -16,6 +16,8 @@ const Lesson = ({ lesson }) => {
   };
 
   const handleBooking = async () => {
+    handleShowSuccess();
+    handleCloseInfo();
     const res = await fetch(`http://localhost:3001/booked_lessons`, {
       method: "POST",
       headers: {
@@ -31,19 +33,21 @@ const Lesson = ({ lesson }) => {
       }),
     });
     const req = await res.json();
-    handleCloseInfo();
-    handleShowSuccess();
   };
 
   return (
     <>
       <CardGroup>
         <Card style={{ width: "25rem" }}>
-          <Card.Body>
+          <Card.Body onClick={handleInfo}>
             <Card.Title>id: {lesson.id} </Card.Title>
-            <Card.Img src={lesson.image} onClick={handleInfo}></Card.Img>
+            <Card.Img src={lesson.image}></Card.Img>
             <Card.Text>comment: {lesson.content}</Card.Text>
-            <Button onClick={handleBooking}>Book Lesson</Button>
+          </Card.Body>
+          <Card.Body>
+            <Button onClick={handleBooking}>
+              Book Lesson
+            </Button>
           </Card.Body>
         </Card>
       </CardGroup>

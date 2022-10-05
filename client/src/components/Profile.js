@@ -22,9 +22,9 @@ const Profile = () => {
         <Tab eventKey="posts" title="Posts">
           <PostTab />
         </Tab>
-        <Tab eventKey="lessons" title="Lessons">
+        {/* <Tab eventKey="lessons" title="Lessons">
           <LessonTab />
-        </Tab>
+        </Tab> */}
         <Tab eventKey="booked-lessons" title="Booked Lessons">
           <BookedLessonTab />
         </Tab>

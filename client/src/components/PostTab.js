@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
-import Post from "./Post";
+import PersonalPost from "./PersonalPost";
 
 const PostTab = () => {
   const [posts, setPosts] = useState([]);
@@ -51,7 +51,7 @@ const PostTab = () => {
       >
         <CardGroup>
           {posts.map((post) => {
-            return <Post key={post.id} post={post} />;
+            return <PersonalPost key={post.id} post={post} />;
           })}
         </CardGroup>
       </InfiniteScroll>
