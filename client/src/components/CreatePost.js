@@ -22,7 +22,8 @@ const CreatePost = ({ show, handleClose }) => {
   };
 
   const handlePost = async (e) => {
-    e.preventDefault();
+    handleClose();
+    handleShowSuccess();
     const newPost = {
       ...formData,
     };
@@ -35,8 +36,6 @@ const CreatePost = ({ show, handleClose }) => {
       body: JSON.stringify({ post: newPost }),
     });
     const req = res.json();
-    handleClose();
-    handleShowSuccess();
   };
 
   return (
@@ -61,6 +60,7 @@ const CreatePost = ({ show, handleClose }) => {
                 <Form.Label>Image</Form.Label>
                 <Form.Control
                   type="text"
+                  name="image"
                   placeholder="Image URL"
                   onChange={(e) => handleChange(e)}
                 />
@@ -70,6 +70,7 @@ const CreatePost = ({ show, handleClose }) => {
                 <Form.Label>Caption</Form.Label>
                 <Form.Control
                   type="text"
+                  name="caption"
                   placeholder="Caption"
                   onChange={(e) => handleChange(e)}
                 />
@@ -79,6 +80,7 @@ const CreatePost = ({ show, handleClose }) => {
                 <Form.Label>Location</Form.Label>
                 <Form.Control
                   type="text"
+                  name="location"
                   placeholder="Location"
                   onChange={(e) => handleChange(e)}
                 />
@@ -105,7 +107,9 @@ const CreatePost = ({ show, handleClose }) => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Success!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Post created!
+          </Modal.Title>
         </Modal.Header>
       </Modal>
     </>

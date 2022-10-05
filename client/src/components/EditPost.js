@@ -9,7 +9,6 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
 
     const [formData, setFormData] = useState({
       image: "",
-      title: "",
       caption: "",
       location: ""
     });
@@ -21,8 +20,11 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
       });
     };
 
+    console.log(formData)
+
      const handlePatch = async (e) => {
-       e.preventDefault();
+       handleCloseEdit();
+       handleShowSuccess();
        const newPost = {
          ...formData,
        };
@@ -36,8 +38,6 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
          body: JSON.stringify({ post: newPost }),
        });
        const req = res.json();
-       handleCloseEdit();
-       handleShowSuccess();
      };
 
   return (
@@ -62,16 +62,8 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
                 <Form.Label>Image</Form.Label>
                 <Form.Control
                   type="text"
+                  name="image"
                   placeholder="Image URL"
-                  onChange={(e) => handleChange(e)}
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-3">
-                <Form.Label>Title</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Title"
                   onChange={(e) => handleChange(e)}
                 />
               </Form.Group>
@@ -80,6 +72,7 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
                 <Form.Label>Caption</Form.Label>
                 <Form.Control
                   type="text"
+                  name="caption"
                   placeholder="Caption"
                   onChange={(e) => handleChange(e)}
                 />
@@ -89,6 +82,7 @@ const EditPost = ({ post, showEdit, handleShowEdit, handleCloseEdit }) => {
                 <Form.Label>Location</Form.Label>
                 <Form.Control
                   type="text"
+                  name="location"
                   placeholder="Location"
                   onChange={(e) => handleChange(e)}
                 />
