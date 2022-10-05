@@ -31,6 +31,7 @@ const Lesson = ({ lesson }) => {
       }),
     });
     const req = await res.json();
+    handleCloseInfo();
     handleShowSuccess();
   };
 
