@@ -15,6 +15,9 @@ const LessonTab = () => {
     const getLessons = async () => {
       const res = await fetch(`http://localhost:3001/coaches/1/lessons?page=1`);
       const data = await res.json();
+      if (data.length === 3) {
+        setHasMore(false);
+      }
       setLessons(data);
     };
 
