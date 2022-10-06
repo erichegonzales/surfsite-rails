@@ -80,17 +80,18 @@
   position: relative;
 }
 
-.landing-bg {
+.landing-bg-img {
   background-image: url("https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2019/12/laura.jpg?resize=1200%2C630");
   background-size: 100% 100%;
   margin-top: 0.25in;
   height: 7in;
   filter: blur(3px);
   width: 100%;
-  position: absolute;
   z-index: -1;
   /* opacity: .8; */
   border-style: solid;
+  position: absolute;
+  /* display: block; */
 }
 
 .border-div {
@@ -136,7 +137,7 @@
   border-radius: 10px;
   /* box-shadow: 0px 0px 6px 2px black; */
   border-style: inset;
-  border-color: white;
+  border-color: black;
   /* border-width: 2px; */
 }
 
@@ -151,6 +152,13 @@
   transform: scale(1.3);
   margin-top: -2.2in;
   margin-right: 1.2in;
+  position: relative;
+}
+
+.landing-cards {
+  /* float: left; */
+  clear: left;
+  /* display: block; */
   position: relative;
 }
 
@@ -179,6 +187,7 @@
 .news-feed {
   margin-top: 1rem;
 }
+
 .news-row {
   margin-bottom: 1rem;
 }
