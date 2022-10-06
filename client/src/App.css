@@ -230,12 +230,19 @@
   margin-left: 0.5in;
 }
 
-.profile-pic {
+/* .profile-pic {
   float: left;
   right: 1.4in;
   transform: scale(2);
   padding: 20px;
   margin: 0.8in;
+} */
+
+.profile-pic {
+  float: left;
+  margin-right: 2in;
+  transform: scale(0.3);
+  margin: -3in;
 }
 
 .badge {
@@ -244,7 +251,7 @@
 }
 
 .profile-col2 {
-  padding-top: 1.21in;
+  padding-top: 1.19in;
 }
 
 .profile-col3 {
