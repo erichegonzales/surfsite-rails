@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "./Post";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
+import SuggestedCol from "./SuggestedCol";
 
 const PostFeed = () => {
   const [posts, setPosts] = useState([]);
@@ -38,7 +39,9 @@ const PostFeed = () => {
   return (
     <Container>
       <Row>
-        <Col></Col>
+        <Col xs={2} style={{ width: "14rem" }}>
+          <SuggestedCol />
+        </Col>
         <Col xs={8} style={{ width: "50rem" }}>
           {/* <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
