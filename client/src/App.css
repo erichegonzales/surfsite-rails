@@ -225,3 +225,38 @@
   transform: scale(1.12);
   overflow: hidden;
 }
+
+.profile-heading {
+  margin-left: 0.5in;
+}
+
+.profile-pic {
+  float: left;
+  right: 1.4in;
+  transform: scale(2);
+  padding: 20px;
+  margin: 0.8in;
+}
+
+.badge {
+  transform: scale(2);
+  margin-top: 0.2in;
+}
+
+.profile-col2 {
+  padding-top: 1.21in;
+}
+
+.profile-col3 {
+  transform: scale(1.2);
+  padding-top: 1.3in;
+}
+
+.profile-col4 {
+  transform: scale(1.2);
+  padding-top: 1.3in;
+}
+
+.prof-col4 {
+  margin-left: 15px;
+}

@@ -25,13 +25,13 @@ const Post = ({ post }) => {
             <Card.Title className="post-title">{post.user.username}</Card.Title>
           </Card.Header> */}
           <Card.Body>
-            <Card.Img
+            {/* <Card.Img
               xs
               fluid
               roundedCircle
               className="prof-pic"
               src={post.user.image}
-            ></Card.Img>
+            ></Card.Img> */}
             <Card.Title className="post-title">{`@${post.user.username}`}</Card.Title>
             <hr />
             <Card.Img src={post.image}></Card.Img>
