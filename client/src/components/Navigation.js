@@ -22,8 +22,8 @@ const Navigation = () => {
   const handleCloseLesson = () => setShowLesson(false);
 
   return (
-    <>
-      <Navbar bg="dark" expand="sm" sticky="top">
+    <div className="nav-bar">
+      <Navbar bg="light" expand="sm" sticky="top" className="nav-bar">
         <Container>
           <Navbar.Brand href="/">
             <Logo />
@@ -72,7 +72,7 @@ const Navigation = () => {
         handleClose={handleCloseLogin}
         handleShow={handleShowLogin}
       />
-    </>
+    </div>
   );
 };
 

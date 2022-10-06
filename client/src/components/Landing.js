@@ -1,34 +1,43 @@
-import { Container, Form, Button, Image, Card, CardGroup } from "react-bootstrap";
+import { Container, Form, Button, Image, Card, CardGroup, Row, Col } from "react-bootstrap";
 
 const Landing = () => {
   return (
-    <Container>
-      <h1>Welcome to AllThingsSurf</h1>
-      <h3>A community where all surfers can connect</h3>
-      <Image src="https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2019/12/laura.jpg?resize=1200%2C630" />
-      <Container>
-        <h3>Login</h3>
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-          </Form.Group>
+    <>
+      <div className="landing-div">
+        <div className="landing-welcome">
+          <div className="welcome-to">
+            <h1> Welcome to</h1>
+            <h1> AllThingSurf</h1>
+          </div>
+          <h3 className="blurb">A community where all surfers can connect</h3>
+        </div>
+        <div className="landing-login">
+          <h3>Login</h3>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </div>
+        <div className="landing-create">
+          <h4>or</h4>
           <Button variant="primary" type="submit">
-            Submit
+            Create an account
           </Button>
-        </Form>
-        <h4>or</h4>
-        <Button variant="primary" type="submit">
-          Create an account
-        </Button>
-      </Container>
+        </div>
+      </div>
+      <div className="landing-bg"></div>
 
-      <CardGroup>
+      {/* <CardGroup>
         <Card style={{ width: "18rem" }}>
           <Card.Img
             variant="top"
@@ -43,11 +52,8 @@ const Landing = () => {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
-
-
-      </CardGroup>
-      
-    </Container>
+      </CardGroup> */}
+    </>
   );
 };
 

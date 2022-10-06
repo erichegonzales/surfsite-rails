@@ -40,14 +40,14 @@ const PostFeed = () => {
       <Row>
         <Col></Col>
         <Col xs={8} style={{ width: "50rem" }}>
-          <Form>
+          {/* <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Create a post" />
               <Button variant="primary" type="button">
                 Submit
               </Button>
             </Form.Group>
-          </Form>
+          </Form> */}
           <InfiniteScroll
             dataLength={posts.length} //This is important field to render the next data
             next={fetchData}
