@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { CardGroup, Container, Form, Pagination } from "react-bootstrap";
+import {
+  CardGroup,
+  Container,
+  Form,
+  Pagination,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import NewsItem from "./NewsItem";
 
@@ -11,7 +18,7 @@ const NewsFeed = () => {
     const getItems = async () => {
       const res = await fetch(
         // `http://localhost:3004/articles?_page=1&_limit=2`
-        `https://newsapi.org/v2/everything?q=surf-wsl&page=1&pageSize=30&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
+        `https://newsapi.org/v2/everything?q=surf-wsl&page=1&pageSize=32&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       );
       const data = await res.json();
       setItems(data.articles);
@@ -25,7 +32,7 @@ const NewsFeed = () => {
     const fetchItems = async () => {
       const res = await fetch(
         // `http://localhost:3004/articles?_page=${activePage}&_limit=2`
-        `https://newsapi.org/v2/everything?q=surf-wsl&page=${activePage}&pageSize=30&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
+        `https://newsapi.org/v2/everything?q=surf-wsl&page=${activePage}&pageSize=32&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       );
       const data = await res.json();
       setItems(data.articles);
@@ -53,17 +60,20 @@ const NewsFeed = () => {
   }
 
   return (
-    <>
-      <Container>
+    <Container className="news-feed">
+      <Row>
+        <div className="news-row">
+          <Col xs={2} style={{ width: "2rem" }}></Col>
+          {/* <Container>
         <Form className="news-search">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>
               <BsSearch />
             </Form.Label>
             <Form.Control type="text" placeholder="Search" />
-          </Form.Group>
+          </Form.Group> */}
 
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label>Filter</Form.Label>
             <Form.Select>
               <option>Select</option>
@@ -71,22 +81,27 @@ const NewsFeed = () => {
               <option>Option</option>
             </Form.Select>
           </Form.Group>
-        </Form>
-      </Container>
+        </Form> */}
+          {/* </Container> */}
 
-      <Container>
-        <CardGroup>
-          {items.map((item) => (
-            <NewsItem key={item.id} item={item} />
-          ))}
-        </CardGroup>
-        <Pagination>
-          {/* <Pagination.Prev /> */}
-          {pageKeys}
-          <Pagination.Next />
-        </Pagination>
-      </Container>
-    </>
+          <Col>
+            <CardGroup>
+              {items.map((item) => (
+                <NewsItem key={item.title} item={item} />
+              ))}
+            </CardGroup>
+          </Col>
+
+          <Col xs={2} style={{ width: "1rem" }}></Col>
+        </div>
+      </Row>
+      <hr />
+      <Pagination>
+        {/* <Pagination.Prev /> */}
+        {pageKeys}
+        <Pagination.Next />
+      </Pagination>
+    </Container>
   );
 };
 

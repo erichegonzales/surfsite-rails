@@ -37,6 +37,7 @@ const Landing = () => {
           </Button>
         </span>
       </div>
+
       <div className="landing-bg"></div>
 
       {/* <CardGroup>

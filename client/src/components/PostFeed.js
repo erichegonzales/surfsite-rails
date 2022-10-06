@@ -16,6 +16,9 @@ const PostFeed = () => {
     const getPosts = async () => {
       const res = await fetch(`http://localhost:3001/posts?page=1`);
       const data = await res.json();
+      if (data.length <= 3) {
+        setHasMore(false);
+      }
       setPosts(data);
     };
 

@@ -77,7 +77,7 @@
     0 0 10px 6px gray; */
 
 .landing-div {
-  position: relative
+  position: relative;
 }
 
 .landing-bg {
@@ -90,6 +90,10 @@
   position: absolute;
   z-index: -1;
   /* opacity: .8; */
+  border-style: solid;
+}
+
+.border-div {
   border-style: solid;
 }
 
@@ -170,6 +174,13 @@
 
 .post-feed {
   margin-top: 1rem;
+}
+
+.news-feed {
+  margin-top: 1rem;
+}
+.news-row {
+  margin-bottom: 1rem;
 }
 
 .post-card {
