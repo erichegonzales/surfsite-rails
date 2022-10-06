@@ -2,12 +2,14 @@ import React from 'react'
 
 const EndMessage = () => {
   return (
-    <p style={{ textAlign: "center" }}>
-      <br />
+    <div>
       <hr />
-      <b>Yay! You have seen it all</b>
-      <br />
-    </p>
+      <p style={{ textAlign: "center" }}>
+        <br />
+        <b>Yay! You have seen it all</b>
+        <br />
+      </p>
+    </div>
   );
 }
 

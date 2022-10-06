@@ -24,16 +24,23 @@ const CreatePost = ({ show, handleClose }) => {
   const handlePost = async (e) => {
     handleClose();
     handleShowSuccess();
-    const newPost = {
-      ...formData,
-    };
+
+    // const newPost = {
+    //   ...formData,
+    // };
 
     const res = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ post: newPost }),
+      body: JSON.stringify({ post: {
+        image: formData.image,
+        caption: formData.caption,
+        location: formData.location,
+        likes: 0,
+        user_id: 1,
+       }})
     });
     const req = res.json();
   };

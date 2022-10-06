@@ -218,4 +218,10 @@
 
 .post-card {
   border-style: hidden;
+  border-radius: 0;
+}
+
+.personal-post-img {
+  transform: scale(1.12);
+  overflow: hidden;
 }

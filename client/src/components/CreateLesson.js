@@ -24,16 +24,25 @@ const CreateLesson = ({ show, handleClose }) => {
 
   const handlePost = async (e) => {
     e.preventDefault();
-    const newLesson = {
-      ...formData,
-    };
+
+    // const newLesson = {
+    //   ...formData,
+    // };
 
     const res = await fetch(`http://localhost:3001/lessons`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ lesson: newLesson }),
+      body: JSON.stringify({
+        lesson: {
+          title: formData.title,
+          description: formData.description,
+          image: formData.image,
+          location: formData.location,
+          coach_id: 1,
+        },
+      }),
     });
     const req = res.json();
     handleClose();

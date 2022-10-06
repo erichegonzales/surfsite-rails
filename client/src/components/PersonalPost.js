@@ -39,12 +39,13 @@ const PersonalPost = ({ post }) => {
     <>
       <CardGroup>
         <Card
+          border="light"
           className="post-card"
           style={{ width: "25rem" }}
           onClick={handleInfo}
         >
           <Card.Body>
-            <Card.Img src={post.image}></Card.Img>
+            <Card.Img className="personal-post-img" src={post.image}></Card.Img>
             {/* <Card.Text>{post.caption}</Card.Text> */}
           </Card.Body>
         </Card>
@@ -90,6 +91,7 @@ const PersonalPost = ({ post }) => {
                         {post.likes}
                       </Card.Text>
                       <Card.Text>{post.caption}</Card.Text>
+                      <Card.Text>{post.location}</Card.Text>
                       <Button size="lg" onClick={handleEdit}>
                         Edit post
                       </Button>
