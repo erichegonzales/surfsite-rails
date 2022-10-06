@@ -1,6 +1,10 @@
-import { Card, CardGroup } from "react-bootstrap";
+import { Card, CardGroup, Button } from "react-bootstrap";
 
 const NewsItem = ({ item }) => {
+  const handleRedirect = () => {
+    window.open(`${item.url}`);
+  }
+
   return (
     <CardGroup>
       <Card style={{ width: "38rem" }}>
@@ -11,6 +15,7 @@ const NewsItem = ({ item }) => {
           <br />
           <br />
           <Card.Text>{item.content}</Card.Text>
+          <Button onClick={handleRedirect}>Go to news article</Button>
         </Card.Body>
       </Card>
     </CardGroup>

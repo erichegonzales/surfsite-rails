@@ -61,9 +61,11 @@ const NewsFeed = () => {
 
   return (
     <Container className="news-feed">
+      <h2>Popular Surf News</h2>
+      <br />
       <Row>
         <div className="news-row">
-          <Col xs={2} style={{ width: "2rem" }}></Col>
+          <Col md="auto"></Col>
           {/* <Container>
         <Form className="news-search">
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -84,7 +86,7 @@ const NewsFeed = () => {
         </Form> */}
           {/* </Container> */}
 
-          <Col>
+          <Col xs lg="20">
             <CardGroup>
               {items.map((item) => (
                 <NewsItem key={item.title} item={item} />
@@ -92,7 +94,7 @@ const NewsFeed = () => {
             </CardGroup>
           </Col>
 
-          <Col xs={2} style={{ width: "1rem" }}></Col>
+          <Col md="auto"></Col>
         </div>
       </Row>
       <hr />
