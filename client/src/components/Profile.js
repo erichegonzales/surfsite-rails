@@ -39,6 +39,9 @@ const Profile = () => {
             </div>
           </Col>
         </Row>
+        <Row xs='2'>
+          <h5 className='bio'>NYC Living. Programmer by weekday, surfer by weekend.</h5>
+        </Row>
       </div>
       <Tabs>
         <Tab eventKey="posts" title="Posts">
