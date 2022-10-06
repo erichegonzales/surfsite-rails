@@ -1,4 +1,5 @@
 import { Container, Form, Button, Image, Card, CardGroup, Row, Col } from "react-bootstrap";
+import LandingCards from "./LandingCards";
 
 const Landing = () => {
   return (
@@ -38,55 +39,7 @@ const Landing = () => {
           </Button>
         </span>
       </div>
-
-      <div className="landing-cards">
-        <CardGroup>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src="https://i.guim.co.uk/img/media/710283e4389eeba6fce47996f4d67484bdbe3a33/0_279_7158_4295/master/7158.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9dd9ea1f0d66e2bacba4f36cd276912a"
-            />
-            <Card.Body>
-              <Card.Title>Latest News</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-
-          <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src="https://i.guim.co.uk/img/media/710283e4389eeba6fce47996f4d67484bdbe3a33/0_279_7158_4295/master/7158.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9dd9ea1f0d66e2bacba4f36cd276912a"
-            />
-            <Card.Body>
-              <Card.Title>Latest News</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-
-          <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src="https://i.guim.co.uk/img/media/710283e4389eeba6fce47996f4d67484bdbe3a33/0_279_7158_4295/master/7158.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9dd9ea1f0d66e2bacba4f36cd276912a"
-            />
-            <Card.Body>
-              <Card.Title>Latest News</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </CardGroup>
-      </div>
+      <LandingCards />
     </>
   );
 };

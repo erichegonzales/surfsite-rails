@@ -48,7 +48,7 @@ const LessonListings = () => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Filter</Form.Label>
+            <Form.Label> </Form.Label>
             <Form.Select>
               <option>Select</option>
               <option>Option</option>
@@ -58,7 +58,7 @@ const LessonListings = () => {
         </Form>
       </Container>
 
-      <Container >
+      <Container>
         <InfiniteScroll
           dataLength={lessons.length} //This is important field to render the next data
           next={fetchData}

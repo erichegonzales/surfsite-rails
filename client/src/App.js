@@ -19,6 +19,8 @@ function App() {
         <Route exact path="/news" element={<NewsFeed />} />
         <Route exact path="/lessons" element={<LessonListings />} />
       </Routes>
+
+      <div className="footer"></div>
     </div>
   );
 }

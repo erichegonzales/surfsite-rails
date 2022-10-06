@@ -1,7 +1,7 @@
 import { Card, CardGroup, Modal, Button } from "react-bootstrap";
 import { ModalBody, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import Video from "./Video";
+import { AiFillHeart } from 'react-icons/ai'
 
 const Post = ({ post }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -16,17 +16,31 @@ const Post = ({ post }) => {
   return (
     <>
       <CardGroup>
-        <Card className='post-card' style={{ width: "25rem" }} onClick={handleInfo}>
+        <Card
+          className="post-card"
+          style={{ width: "25rem" }}
+          onClick={handleInfo}
+        >
+          {/* <Card.Header>
+            <Card.Title className="post-title">{post.user.username}</Card.Title>
+          </Card.Header> */}
           <Card.Body>
-            <Card.Img src={post.image}></Card.Img>
-            {/* {post.video === null || post.video === "null" ? null : (
-              <Video src={post.video} />
-            )} */}
-            <Card.Text>title: {post.title}</Card.Text>
-            <Card.Text>user: {post.user.username}</Card.Text>
-            <Card.Text>location: {post.location}</Card.Text>
-            <Card.Text>likes: {post.likes}</Card.Text>
-            <Card.Text>description: {post.caption}</Card.Text>
+            <Card.Img
+              xs
+              fluid
+              roundedCircle
+              className="prof-pic"
+              src={post.user.image}
+            ></Card.Img>
+              <Card.Title className="post-title">{`@${post.user.username}`}</Card.Title>
+              <hr />
+              <Card.Img src={post.image}></Card.Img>
+              <hr />
+              <Card.Text>
+                <AiFillHeart /> {post.likes}
+              </Card.Text>
+              <Card.Text>{post.location}</Card.Text>
+              <Card.Text>{post.caption}</Card.Text>
           </Card.Body>
         </Card>
       </CardGroup>
