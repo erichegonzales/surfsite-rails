@@ -76,16 +76,6 @@ const CreatePost = ({ show, handleClose }) => {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Caption</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="caption"
-                  placeholder="Caption"
-                  onChange={(e) => handleChange(e)}
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-3">
                 <Form.Label>Location</Form.Label>
                 <Form.Control
                   type="text"
@@ -93,6 +83,16 @@ const CreatePost = ({ show, handleClose }) => {
                   placeholder="Location"
                   onChange={(e) => handleChange(e)}
                 />
+
+                <Form.Group className="mb-3">
+                  <Form.Label>Caption</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="caption"
+                    placeholder="Caption"
+                    onChange={(e) => handleChange(e)}
+                  />
+                </Form.Group>
               </Form.Group>
             </Form.Group>
           </Form>
