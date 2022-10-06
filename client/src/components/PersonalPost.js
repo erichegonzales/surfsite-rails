@@ -39,16 +39,9 @@ const PersonalPost = ({ post }) => {
       <CardGroup>
         <Card style={{ width: "25rem" }} onClick={handleInfo}>
           <Card.Body>
-            <Card.Title>id: {post.id} </Card.Title>
             <Card.Img src={post.image}></Card.Img>
-            {/* {post.video === null || post.video === "null" ? null : (
-              <Video src={post.video} />
-            )} */}
-            <Card.Text>title: {post.title}</Card.Text>
-            <Card.Text>user: {post.user.username}</Card.Text>
+            <Card.Text>caption: {post.caption}</Card.Text>
             <Card.Text>location: {post.location}</Card.Text>
-            <Card.Text>likes: {post.likes}</Card.Text>
-            <Card.Text>description: {post.caption}</Card.Text>
           </Card.Body>
         </Card>
       </CardGroup>

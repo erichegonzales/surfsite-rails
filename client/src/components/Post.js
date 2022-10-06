@@ -16,9 +16,8 @@ const Post = ({ post }) => {
   return (
     <>
       <CardGroup>
-        <Card style={{ width: "25rem" }} onClick={handleInfo}>
+        <Card className='post-card' style={{ width: "25rem" }} onClick={handleInfo}>
           <Card.Body>
-            <Card.Title>id: {post.id} </Card.Title>
             <Card.Img src={post.image}></Card.Img>
             {/* {post.video === null || post.video === "null" ? null : (
               <Video src={post.video} />

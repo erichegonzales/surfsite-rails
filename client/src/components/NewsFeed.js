@@ -10,12 +10,12 @@ const NewsFeed = () => {
   useEffect(() => {
     const getItems = async () => {
       const res = await fetch(
-        `http://localhost:3004/articles?_page=1&_limit=2`
+        // `http://localhost:3004/articles?_page=1&_limit=2`
+        `https://newsapi.org/v2/everything?q=surf-wsl&page=1&pageSize=30&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       );
-      // `https://newsapi.org/v2/everything?q=surf-wsl&page=1&pageSize=20&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       const data = await res.json();
-      //   setItems(data.articles);
-      setItems(data);
+      setItems(data.articles);
+      // setItems(data);
     };
 
     getItems();
@@ -24,12 +24,12 @@ const NewsFeed = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await fetch(
-        `http://localhost:3004/articles?_page=${activePage}&_limit=2`
+        // `http://localhost:3004/articles?_page=${activePage}&_limit=2`
+        `https://newsapi.org/v2/everything?q=surf-wsl&page=${activePage}&pageSize=30&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       );
-      // `https://newsapi.org/v2/everything?q=surf-wsl&page=${activePage}&pageSize=20&sortBy=relevancy&language=en&apiKey=60dcae65b56641808aafbd67b95306c8`
       const data = await res.json();
-      //   setItems(data.articles);
-      setItems(data);
+      setItems(data.articles);
+      // setItems(data);
     };
 
     fetchItems();

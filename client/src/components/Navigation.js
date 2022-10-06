@@ -34,7 +34,7 @@ const Navigation = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/posts">Feed</Nav.Link>
               <Nav.Link href="/lessons">Lessons</Nav.Link>
-              {/* <Nav.Link href="/news">News</Nav.Link> */}
+              <Nav.Link href="/news">News</Nav.Link>
               <Nav.Link href="/profile">Profile</Nav.Link>
 
               <NavDropdown

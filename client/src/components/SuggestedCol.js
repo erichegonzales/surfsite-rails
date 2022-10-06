@@ -15,7 +15,7 @@ const SuggestedCol = () => {
     "https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4MTA0MzMwMDk4Nzc5NDA5/lairdhamiltontopperjpg.jpg";
 
   return (
-    <div sticky className="sg-div">
+    <div className="sg-div">
       <h3>Suggested</h3>
       <hr />
       <SuggestedItem image={maya} username={"@mayagabeira"} />

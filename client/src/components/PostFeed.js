@@ -5,6 +5,7 @@ import Post from "./Post";
 import Loader from "./Loader";
 import EndMessage from "./EndMessage";
 import SuggestedCol from "./SuggestedCol";
+import NewsCol from "./NewsCol";
 
 const PostFeed = () => {
   const [posts, setPosts] = useState([]);
@@ -37,12 +38,10 @@ const PostFeed = () => {
   };
 
   return (
-    <Container>
+    <Container className="post-feed">
       <Row>
-        <Col xs={2} style={{ width: "14rem" }}>
-          <SuggestedCol />
-        </Col>
-        <Col xs={8} style={{ width: "50rem" }}>
+        <Col xs={2} style={{ width: "5rem" }}></Col>
+        <Col xs={8} style={{ width: "60rem" }}>
           {/* <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="email" placeholder="Create a post" />
@@ -63,7 +62,10 @@ const PostFeed = () => {
             })}
           </InfiniteScroll>
         </Col>
-        <Col></Col>
+        <Col>
+          <SuggestedCol />
+        </Col>
+        {/* <Col><NewsCol /></Col> */}
       </Row>
     </Container>
   );

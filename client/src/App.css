@@ -167,3 +167,11 @@
   margin: -0.4in;
   transform: scale(0.5);
 }
+
+.post-feed {
+  margin-top: 1rem;
+}
+
+.post-card {
+  border-style: hidden;
+}
