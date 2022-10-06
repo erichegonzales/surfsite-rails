@@ -95,16 +95,16 @@
 
 .landing-welcome {
   float: left;
-  margin-top: 2.5in;
+  margin-top: 2.7in;
   margin-left: 0.5in;
-  width: 30%;
+  width: 35%;
   position: relative;
 }
 
 .welcome-to {
   font-family: 'Lemon Tuesday', sans-serif;
   transform: scale(2);
-  text-shadow: 2px 2px 8px black;
+  text-shadow: 4px 4px 12px black;
 }
 
 .blurb {
@@ -113,20 +113,38 @@
   margin-left: 0.4in;
   transform: scale(0.9);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 20px 2px black;
 }
 
 .landing-login {
   float: left;
-  margin-top: 2.5in;
-  margin-left: 0.5in;
-  width: 30%;
+  padding: 0.5in;
+  margin-top: 1.7in;
+  margin-right: 0.6in;
+  width: 35%;
+  transform: scale(1.04);
+  position: relative;
+}
+
+.login-box {
+  background-color: rgba(24, 90, 116, 0.6);
+  padding: 0.3in;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 6px 2px black; */
+  border-style: inset;
+  /* border-width: 2px; */
+}
+
+.or {
+  float: left;
+  text-shadow: 2px 2px 4px black;
   position: relative;
 }
 
 .landing-create {
   float: right;
-  margin-top: 2.5in;
-  margin-left: 0.5in;
+  transform: scale(1.2);
+  top: 3.8in;
+  right: 1.2in;
   position: relative;
 }
