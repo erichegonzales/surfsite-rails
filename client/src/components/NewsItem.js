@@ -2,13 +2,15 @@ import { Card, CardGroup } from "react-bootstrap";
 
 const NewsItem = ({ item }) => {
   return (
-    <CardGroup >
+    <CardGroup>
       <Card style={{ width: "38rem" }}>
         <Card.Body>
-          <Card.Title>id: {item.id} </Card.Title>
-          <Card.Title>title: {item.title} </Card.Title>
+          <Card.Title>{item.title} </Card.Title>
+          <hr />
           <Card.Img src={item.urlToImage}></Card.Img>
-          <Card.Text>comment: {item.content}</Card.Text>
+          <br />
+          <br />
+          <Card.Text>{item.content}</Card.Text>
         </Card.Body>
       </Card>
     </CardGroup>
