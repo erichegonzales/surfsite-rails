@@ -37,9 +37,18 @@
   }
 }
 
-.surf-logo {
-  transform: scale(2);
+.logo {
+  padding-top: 2px;
+  display: flexbox;
+}
+
+.logo-icon {
+  transform: scale(2.2);
   border-radius: 5px;
+}
+
+.logo-name {
+  padding-top: 7px;
 }
 
 .plus-icon {

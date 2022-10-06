@@ -18,9 +18,6 @@ const Landing = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
           <Button variant="primary" type="submit">
             Submit
           </Button>
@@ -47,36 +44,9 @@ const Landing = () => {
           </Card.Body>
         </Card>
 
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://i.guim.co.uk/img/media/710283e4389eeba6fce47996f4d67484bdbe3a33/0_279_7158_4295/master/7158.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9dd9ea1f0d66e2bacba4f36cd276912a"
-          />
-          <Card.Body>
-            <Card.Title>Latest Posts</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
 
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://i.guim.co.uk/img/media/710283e4389eeba6fce47996f4d67484bdbe3a33/0_279_7158_4295/master/7158.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9dd9ea1f0d66e2bacba4f36cd276912a"
-          />
-          <Card.Body>
-            <Card.Title>Latest Lessons</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
       </CardGroup>
+      
     </Container>
   );
 };

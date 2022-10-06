@@ -17,8 +17,8 @@ const PostTab = () => {
         `http://localhost:3001/users/${userId}/posts?page=1`
       );
       const data = await res.json();
-      if (data.length === 3) {
-        setHasMore(false)
+      if (data.length <= 3) {
+        setHasMore(false);
       }
       setPosts(data);
     };
