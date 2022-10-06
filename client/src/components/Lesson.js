@@ -1,6 +1,7 @@
 import { Card, CardGroup, Modal, Button } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
+import { AiFillStar } from "react-icons/ai";
 
 const Lesson = ({ lesson }) => {
   const [showSuccess, setShowSucess] = useState(false);
@@ -40,12 +41,17 @@ const Lesson = ({ lesson }) => {
       <CardGroup>
         <Card style={{ width: "25rem" }}>
           <Card.Body onClick={handleInfo}>
-            <Card.Title>id: {lesson.id} </Card.Title>
+            <Card.Title>{lesson.title} </Card.Title>
+            <hr />
             <Card.Img src={lesson.image}></Card.Img>
-            <Card.Text>comment: {lesson.content}</Card.Text>
+            <hr />
+            <Card.Text>{lesson.description}</Card.Text>
+            <Card.Text>
+              {lesson.avg_rating} <AiFillStar />
+            </Card.Text>
           </Card.Body>
           <Card.Body>
-            <Button size="lg" onClick={handleBooking}>
+            <Button className='book-btn' size="lg" onClick={handleBooking}>
               Book Lesson
             </Button>
           </Card.Body>

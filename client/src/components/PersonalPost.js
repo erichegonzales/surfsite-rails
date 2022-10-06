@@ -2,6 +2,7 @@ import { Card, CardGroup, Modal, Button } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import EditPost from "./EditPost";
+import { AiFillHeart } from "react-icons/ai";
 // import Video from "./Video";
 
 const PersonalPost = ({ post }) => {
@@ -37,11 +38,14 @@ const PersonalPost = ({ post }) => {
   return (
     <>
       <CardGroup>
-        <Card style={{ width: "25rem" }} onClick={handleInfo}>
+        <Card
+          className="post-card"
+          style={{ width: "25rem" }}
+          onClick={handleInfo}
+        >
           <Card.Body>
             <Card.Img src={post.image}></Card.Img>
-            <Card.Text>caption: {post.caption}</Card.Text>
-            <Card.Text>location: {post.location}</Card.Text>
+            {/* <Card.Text>{post.caption}</Card.Text> */}
           </Card.Body>
         </Card>
       </CardGroup>
@@ -58,7 +62,7 @@ const PersonalPost = ({ post }) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            id: {post.id}
+            {`@${post.user.username}`}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -81,7 +85,11 @@ const PersonalPost = ({ post }) => {
                 <CardGroup>
                   <Card style={{ width: "15rem" }}>
                     <Card.Body>
-                      <Card.Text>description: </Card.Text>
+                      <Card.Text>
+                        <AiFillHeart />
+                        {post.likes}
+                      </Card.Text>
+                      <Card.Text>{post.caption}</Card.Text>
                       <Button size="lg" onClick={handleEdit}>
                         Edit post
                       </Button>

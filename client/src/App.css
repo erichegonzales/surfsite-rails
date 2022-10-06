@@ -76,6 +76,12 @@
     0 0 8px 4px gray,
     0 0 10px 6px gray; */
 
+/* .landing {
+  height: 12in;
+  position: relative;
+  display: flexbox;
+} */
+
 .landing-div {
   position: relative;
   /* display: block; */

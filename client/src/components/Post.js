@@ -32,15 +32,15 @@ const Post = ({ post }) => {
               className="prof-pic"
               src={post.user.image}
             ></Card.Img>
-              <Card.Title className="post-title">{`@${post.user.username}`}</Card.Title>
-              <hr />
-              <Card.Img src={post.image}></Card.Img>
-              <hr />
-              <Card.Text>
-                <AiFillHeart /> {post.likes}
-              </Card.Text>
-              <Card.Text>{post.location}</Card.Text>
-              <Card.Text>{post.caption}</Card.Text>
+            <Card.Title className="post-title">{`@${post.user.username}`}</Card.Title>
+            <hr />
+            <Card.Img src={post.image}></Card.Img>
+            <hr />
+            <Card.Text>
+              <AiFillHeart /> {post.likes}
+            </Card.Text>
+            <Card.Text>{post.location}</Card.Text>
+            <Card.Text>{post.caption}</Card.Text>
           </Card.Body>
         </Card>
       </CardGroup>
@@ -57,10 +57,10 @@ const Post = ({ post }) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            id: {post.id}
+            {`@${post.user.username}`}
           </Modal.Title>
         </Modal.Header>
-        <ModalBody>
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
@@ -80,14 +80,18 @@ const Post = ({ post }) => {
                 <CardGroup>
                   <Card style={{ width: "15rem" }}>
                     <Card.Body>
-                      <Card.Text>description: </Card.Text>
+                      <Card.Text>
+                        <AiFillHeart />
+                        {post.likes}
+                      </Card.Text>
+                      <Card.Text>{post.caption}</Card.Text>
                     </Card.Body>
                   </Card>
                 </CardGroup>
               </Col>
             </Row>
           </Container>
-        </ModalBody>
+        </Modal.Body>
       </Modal>
     </>
   );
