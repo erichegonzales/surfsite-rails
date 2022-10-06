@@ -30,13 +30,13 @@ const BookedLesson = ({ booked_lesson }) => {
       <CardGroup>
         <Card style={{ width: "25rem" }}>
           <Card.Body onClick={handleInfo}>
-            <Card.Title>{booked_lesson.title} </Card.Title>
+            <Card.Title>{booked_lesson.lesson.title} </Card.Title>
             <hr />
-            <Card.Img src={booked_lesson.image}></Card.Img>
+            <Card.Img src={booked_lesson.lesson.image}></Card.Img>
             <hr />
-            <Card.Text>{booked_lesson.description}</Card.Text>
+            <Card.Text>{booked_lesson.lesson.description}</Card.Text>
             <Card.Text>
-              {booked_lesson.avg_rating} <AiFillStar />
+              {booked_lesson.lesson.avg_rating} <AiFillStar />
             </Card.Text>
           </Card.Body>
           <Card.Body>
@@ -58,9 +58,9 @@ const BookedLesson = ({ booked_lesson }) => {
         className="info-modal"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            id: {booked_lesson.id}
-          </Modal.Title>
+          {/* <Modal.Title id="contained-modal-title-vcenter">
+            id: {booked_lesson.lesson.id}
+          </Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
           <Container>
@@ -82,8 +82,11 @@ const BookedLesson = ({ booked_lesson }) => {
                 <CardGroup>
                   <Card style={{ width: "15rem" }}>
                     <Card.Body>
+                      <Card.Title>{booked_lesson.lesson.title}</Card.Title>
+                      <hr />
+                      <Card.Text>{booked_lesson.lesson.description}</Card.Text>
                       <Card.Text>
-                        description: {booked_lesson.content}
+                        {booked_lesson.lesson.avg_rating} <AiFillStar />
                       </Card.Text>
                       <Button size="lg" onClick={handleBooking}>
                         Cancel Lesson

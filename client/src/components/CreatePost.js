@@ -29,6 +29,8 @@ const CreatePost = ({ show, handleClose }) => {
     //   ...formData,
     // };
 
+    console.log(formData.caption)
+
     const res = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: {
@@ -36,8 +38,8 @@ const CreatePost = ({ show, handleClose }) => {
       },
       body: JSON.stringify({ post: {
         image: formData.image,
-        caption: formData.caption,
         location: formData.location,
+        caption: formData.caption,
         likes: 0,
         user_id: 1,
        }})

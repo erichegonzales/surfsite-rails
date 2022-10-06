@@ -51,7 +51,7 @@ const Lesson = ({ lesson }) => {
             </Card.Text>
           </Card.Body>
           <Card.Body>
-            <Button className='book-btn' size="lg" onClick={handleBooking}>
+            <Button className="book-btn" size="lg" onClick={handleBooking}>
               Book Lesson
             </Button>
           </Card.Body>
@@ -69,9 +69,9 @@ const Lesson = ({ lesson }) => {
         className="info-modal"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            id: {lesson.id}
-          </Modal.Title>
+          {/* <Modal.Title id="contained-modal-title-vcenter">
+            {lesson.title}
+          </Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
           <Container>
@@ -93,7 +93,12 @@ const Lesson = ({ lesson }) => {
                 <CardGroup>
                   <Card style={{ width: "15rem" }}>
                     <Card.Body>
-                      <Card.Text>description: {lesson.content}</Card.Text>
+                      <Card.Text>{lesson.title}</Card.Text>
+                      <hr/>
+                      <Card.Text>{lesson.description}</Card.Text>
+                      <Card.Text>
+                        {lesson.avg_rating} <AiFillStar />
+                      </Card.Text>
                       <Button size="lg" onClick={handleBooking}>
                         Book Lesson
                       </Button>
