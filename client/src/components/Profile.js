@@ -19,7 +19,7 @@ const Profile = () => {
           </Col>
 
           <Col xs="3" className="profile-col2">
-            <h2>@erichegonzales</h2>
+            <h2>@nycsurflover</h2>
             <hr />
             <Badge className="badge" bg="primary">
               Surfer
@@ -42,7 +42,8 @@ const Profile = () => {
         </Row>
         <Row xs="2">
           <h5 className="bio">
-            NYC Living. Programmer by weekday, surfer by weekend.
+            {/* NYC Living. Programmer by day, surfer by night. */}
+            Programmer and surfer living in NYC.
           </h5>
         </Row>
       </div>

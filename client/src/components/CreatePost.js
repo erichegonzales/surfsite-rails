@@ -15,6 +15,7 @@ const CreatePost = ({ show, handleClose }) => {
   });
 
   const handleChange = (e) => {
+    
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -29,7 +30,7 @@ const CreatePost = ({ show, handleClose }) => {
     //   ...formData,
     // };
 
-    console.log(formData.caption)
+    console.log(formData)
 
     const res = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
@@ -38,8 +39,8 @@ const CreatePost = ({ show, handleClose }) => {
       },
       body: JSON.stringify({ post: {
         image: formData.image,
-        location: formData.location,
         caption: formData.caption,
+        location: formData.location,
         likes: 0,
         user_id: 1,
        }})
@@ -75,25 +76,26 @@ const CreatePost = ({ show, handleClose }) => {
                 />
               </Form.Group>
 
+              {/* <Form.Group className="mb-3">
+                <Form.Label>Caption</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="caption"
+                  placeholder="Caption"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Form.Group> */}
+
               <Form.Group className="mb-3">
-                <Form.Label>Location</Form.Label>
+                <Form.Label>Caption</Form.Label>
                 <Form.Control
                   type="text"
                   name="location"
-                  placeholder="Location"
+                  placeholder="Caption"
                   onChange={(e) => handleChange(e)}
                 />
-
-                <Form.Group className="mb-3">
-                  <Form.Label>Caption</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="caption"
-                    placeholder="Caption"
-                    onChange={(e) => handleChange(e)}
-                  />
-                </Form.Group>
               </Form.Group>
+
             </Form.Group>
           </Form>
         </Modal.Body>
